@@ -1,0 +1,58 @@
+using UnityEngine;
+using UnityEngine.UIElements;
+
+public class playerMovement : MonoBehaviour
+{
+
+    [SerializeField]private float moveSpeed = 1.0f; 
+    public float jumpHeight;
+
+    private Transform playerTransform; //player's transform, no longer has serialize field because we checked itself in awake
+    private Vector3 scaleChange;
+    private bool growing;
+
+    private void Awake()
+    {
+        playerTransform = GetComponent<Transform>();
+        scaleChange = new Vector3(0f, -0.01f, 0f);
+    }
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        //Debug.Log("Hey.");
+    }
+
+    void PlayerInput()
+    {
+        if (Input.GetKey(KeyCode.D))
+        {
+            playerTransform.Translate(translation:Vector3.right * moveSpeed * Time.deltaTime);
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            playerTransform.Translate(translation: Vector3.left * moveSpeed * Time.deltaTime);
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            playerTransform.Translate(translation: Vector3.down * moveSpeed * Time.deltaTime);
+        }
+        if (Input.GetKey(KeyCode.W))
+        {
+            playerTransform.Translate(translation: Vector3.up * moveSpeed * Time.deltaTime);
+        }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        PlayerInput();
+    }
+
+    public class PlayerData {
+        public PlayerData()
+        {
+
+        }
+    }
+}

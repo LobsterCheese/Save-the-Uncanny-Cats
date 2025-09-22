@@ -8,14 +8,13 @@ public class Uncanny : MonoBehaviour
 
     void Start()
     {
-        
+
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject.tag == "Flag")
         {
-            //Debug.Log("Hitting the thing!");
             Destroy(gameObject);
         }
     }

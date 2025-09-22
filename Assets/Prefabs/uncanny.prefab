@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 7793958080506534233}
   - component: {fileID: 2271320856910531458}
   m_Layer: 0
-  m_Name: uncanny
-  m_TagString: Untagged
+  m_Name: Uncanny
+  m_TagString: Uncanny
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
